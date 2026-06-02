@@ -1,0 +1,23 @@
+Changes
+1. Generated a self-signed PKCS12 keystore → src/main/resources/keystore.p12
+
+Alias joi-delivery, RSA 2048, valid 10 years, SAN for localhost/127.0.0.1
+2. Configured SSL in application.yaml:
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-type: PKCS12
+    key-store-password: changeit
+    key-alias: joi-delivery
+Verified
+✅ Build succeeds
+✅ Tomcat starts on port 8443 (https) with the keystore
+✅ Endpoints respond over HTTPS (https://localhost:8443/inventory/health)
+✅ Plain HTTP to the TLS port is rejected (400 Bad Request)
+Important caveats
+Self-signed cert — fine for local/dev, but clients must skip verification (curl -k). For production, use a CA-issued certificate.
+Hardcoded password (changeit) — for anything beyond dev, externalize it via an env var, e.g. key-store-password: ${SSL_KEYSTORE_PASSWORD}.
+The port changed from the default 8080 → 8443. Update any clients/tests that assume http://localhost:8080.

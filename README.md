@@ -4,6 +4,18 @@
 #Renaming remote references: 100% (4/4), done.
 #sanjay@Sanjays-MacBook-Pro developer-joi-delivery-java % git remote add origin git@github.com:emailtosanj/djoidjava25.git
 
+#create a cert and then keystore
+which keytool && keytool -genkeypair \
+-alias joi-delivery \
+-keyalg RSA -keysize 2048 \
+-storetype PKCS12 \
+-keystore /Users/sanjay/IdeaProjects/developer-joi-delivery-java/src/main/resources/keystore.p12 \
+-storepass changeit \
+-validity 3650 \
+-dname "CN=localhost, OU=Joi, O=Joi Delivery, L=City, ST=State, C=US" \
+-ext "SAN=dns:localhost,ip:127.0.0.1" \
+&& echo "Keystore created"
+
 
 # Welcome to JOI Delivery
 JOI Delivery is built for real life. For the young professional who gets home late and doesn’t have the energy to cook. For the student with an exam tomorrow and an empty fridge tonight. These aren’t exceptions — they’re everyday moments. That’s why JOI Delivery brings food and groceries to your door, fast, fresh, and right when you need them.
