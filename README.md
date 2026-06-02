@@ -1,3 +1,10 @@
+#origin  git@github.com:techops-recsys-lateral-hiring/developer-joi-delivery-java.git (fetch)
+#origin  git@github.com:techops-recsys-lateral-hiring/developer-joi-delivery-java.git (push)
+#sanjay@Sanjays-MacBook-Pro developer-joi-delivery-java % git remote rename origin upstream
+#Renaming remote references: 100% (4/4), done.
+#sanjay@Sanjays-MacBook-Pro developer-joi-delivery-java % git remote add origin git@github.com:emailtosanj/djoidjava25.git
+
+
 # Welcome to JOI Delivery
 JOI Delivery is built for real life. For the young professional who gets home late and doesn’t have the energy to cook. For the student with an exam tomorrow and an empty fridge tonight. These aren’t exceptions — they’re everyday moments. That’s why JOI Delivery brings food and groceries to your door, fast, fresh, and right when you need them.
 
